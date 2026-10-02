@@ -1,0 +1,223 @@
+/*
+  LabControl — Layout com sidebar
+  Usado por dashboard, usuarios, usuario-form, equipamentos e
+  equipamento-form. A tela de login não usa este arquivo.
+*/
+
+.app {
+  display: flex;
+  align-items: stretch;
+}
+
+.sidebar {
+  width: var(--largura-sidebar);
+  flex: none;
+  background: var(--cor-primaria-escura);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: var(--espaco-5) 0;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.sidebar__marca {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espaco-2);
+  padding: 0 var(--espaco-5) var(--espaco-5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: var(--espaco-4);
+}
+
+.sidebar__marca-icone {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: var(--texto-md);
+  color: var(--cor-primaria-fundo);
+}
+
+.sidebar__marca-nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: var(--texto-md);
+  color: #FFFFFF;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+  flex: 1;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  padding: 0.65rem var(--espaco-5);
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: background-color var(--transicao), color var(--transicao);
+}
+
+.sidebar__link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+}
+
+.sidebar__link.ativo {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-left-color: var(--cor-primaria-fundo);
+}
+
+.sidebar__rodape {
+  padding: 0 var(--espaco-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: var(--espaco-4);
+}
+
+.sidebar__sair {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  width: 100%;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+.sidebar__sair:hover {
+  color: #FFFFFF;
+}
+
+.conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espaco-4) var(--espaco-6);
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.topo__usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.3;
+}
+
+.topo__usuario-nome {
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.topo__usuario-perfil {
+  font-size: var(--texto-xs);
+  color: var(--cor-texto-suave);
+}
+
+.pagina {
+  padding: var(--espaco-6);
+  flex: 1;
+}
+
+.pagina__cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--espaco-4);
+  margin-bottom: var(--espaco-5);
+  flex-wrap: wrap;
+}
+
+.pagina__titulo {
+  font-size: var(--texto-xl);
+}
+
+.pagina__subtitulo {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-sm);
+  margin-top: var(--espaco-1);
+}
+
+.cartao {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-card);
+}
+
+@media (max-width: 860px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding: var(--espaco-3) var(--espaco-4);
+    overflow-x: auto;
+  }
+
+  .sidebar__marca {
+    border-bottom: none;
+    padding: 0 var(--espaco-4) 0 0;
+    margin-bottom: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+  }
+
+  .sidebar__link {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.5rem var(--espaco-3);
+    white-space: nowrap;
+  }
+
+  .sidebar__link.ativo {
+    border-left-color: transparent;
+    border-bottom-color: var(--cor-primaria-fundo);
+  }
+
+  .sidebar__rodape {
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0 0 0 var(--espaco-4);
+    margin-left: var(--espaco-2);
+  }
+
+  .pagina {
+    padding: var(--espaco-4);
+  }
+}

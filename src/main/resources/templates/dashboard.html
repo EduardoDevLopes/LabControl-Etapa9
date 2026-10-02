@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard — LabControl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/variables.css}">
+  <link rel="stylesheet" th:href="@{/css/base.css}">
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet" th:href="@{/css/tabela.css}">
+  <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+
+  <div id="app" class="app">
+    <main class="pagina" id="conteudo-pagina">
+      <div class="pagina__cabecalho">
+        <div>
+          <h1 class="pagina__titulo">Dashboard</h1>
+          <p class="pagina__subtitulo">Visão geral do laboratório</p>
+        </div>
+      </div>
+
+      <section class="indicadores" id="indicadores">
+        <!-- Preenchido via JS -->
+      </section>
+
+      <section class="cartao secao-alerta">
+        <div class="secao-alerta__cabecalho">
+          <h2 class="secao-alerta__titulo">Equipamentos com estoque baixo ou crítico</h2>
+        </div>
+        <table class="tabela" id="tabela-alerta-estoque">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Quantidade</th>
+              <th>Nível</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela-alerta">
+            <!-- Preenchido via JS -->
+          </tbody>
+        </table>
+        <p class="tabela-vazia" id="mensagem-sem-alertas" hidden>Nenhum equipamento em estado crítico ou baixo no momento.</p>
+      </section>
+    </main>
+  </div>
+
+  <script th:src="@{/js/api.js}"></script>
+  <script th:src="@{/js/layout.js}"></script>
+  <script th:src="@{/js/dashboard.js}"></script>
+</body>
+</html>

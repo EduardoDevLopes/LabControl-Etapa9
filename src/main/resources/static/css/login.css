@@ -1,0 +1,85 @@
+/*
+  LabControl — Tela de login
+  Única tela sem sidebar: layout centrado, tela cheia.
+*/
+
+.tela-login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-6);
+  padding: var(--espaco-6) var(--espaco-4);
+  background:
+    radial-gradient(circle at 15% 10%, var(--cor-primaria-fundo) 0%, transparent 45%),
+    var(--cor-fundo);
+}
+
+.tela-login__marca {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espaco-2);
+}
+
+.tela-login__marca-icone {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: var(--texto-lg);
+  color: var(--cor-primaria);
+}
+
+.tela-login__marca-nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: var(--texto-lg);
+  color: var(--cor-texto);
+}
+
+.cartao-login {
+  width: 100%;
+  max-width: 380px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: 0 4px 16px rgba(27, 43, 34, 0.08);
+  padding: var(--espaco-6);
+}
+
+.cartao-login__titulo {
+  font-size: var(--texto-lg);
+}
+
+.cartao-login__subtitulo {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-sm);
+  margin-top: var(--espaco-1);
+  margin-bottom: var(--espaco-5);
+}
+
+.campo {
+  margin-bottom: var(--espaco-4);
+}
+
+.cartao-login__botao {
+  width: 100%;
+  margin-top: var(--espaco-2);
+}
+
+.alerta-login {
+  background: var(--cor-erro-fundo);
+  color: var(--cor-erro);
+  font-size: var(--texto-sm);
+  padding: var(--espaco-3);
+  border-radius: var(--raio-pequeno);
+  margin-bottom: var(--espaco-4);
+}
+
+.cartao-login__dica {
+  margin-top: var(--espaco-5);
+  padding-top: var(--espaco-4);
+  border-top: 1px solid var(--cor-borda);
+  font-size: var(--texto-xs);
+  color: var(--cor-texto-suave);
+  line-height: 1.5;
+}

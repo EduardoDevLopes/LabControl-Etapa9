@@ -1,0 +1,55 @@
+/*
+  LabControl — Telas de listagem (usuarios.html, equipamentos.html)
+  Barra de busca + modal de confirmação de exclusão.
+*/
+
+.barra-filtros {
+  margin-bottom: var(--espaco-4);
+  max-width: 360px;
+}
+
+.barra-filtros input {
+  width: 100%;
+}
+
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 43, 34, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espaco-4);
+  z-index: 100;
+}
+
+.modal-fundo[hidden] {
+  display: none;
+}
+
+.modal {
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  padding: var(--espaco-5);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(27, 43, 34, 0.2);
+}
+
+.modal h2 {
+  font-size: var(--texto-md);
+  margin-bottom: var(--espaco-2);
+}
+
+.modal p {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-suave);
+  line-height: 1.5;
+}
+
+.modal__acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--espaco-3);
+  margin-top: var(--espaco-5);
+}

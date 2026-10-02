@@ -1,0 +1,63 @@
+/*
+  LabControl — Design tokens
+  Paleta e tipografia inspiradas em instrumentação e bancada de laboratório:
+  verde-mata como cor de identidade (não o verde-SaaS padrão), âmbar/vermelho
+  reservados exclusivamente para estados de estoque e erro.
+*/
+
+:root {
+  /* Cor — base */
+  --cor-fundo: #F7F8F6;
+  --cor-superficie: #FFFFFF;
+  --cor-texto: #1B2B22;
+  --cor-texto-suave: #52605A;
+  --cor-borda: #D7DCD4;
+  --cor-borda-forte: #AEB8AE;
+
+  /* Cor — identidade */
+  --cor-primaria: #2F5233;
+  --cor-primaria-escura: #223D26;
+  --cor-primaria-fundo: #E9F0E7;
+
+  /* Cor — estados de estoque / feedback */
+  --cor-normal: #2F5233;
+  --cor-normal-fundo: #E9F0E7;
+  --cor-baixo: #8A6D1D;
+  --cor-baixo-fundo: #F5EDD6;
+  --cor-critico: #B45309;
+  --cor-critico-fundo: #FBEADB;
+  --cor-esgotado: #A32D2D;
+  --cor-esgotado-fundo: #F8E2E2;
+
+  --cor-erro: #A32D2D;
+  --cor-erro-fundo: #F8E2E2;
+
+  /* Tipografia */
+  --fonte-titulo: "Space Grotesk", "Segoe UI", sans-serif;
+  --fonte-corpo: "Inter", "Segoe UI", sans-serif;
+
+  --texto-xs: 0.75rem;
+  --texto-sm: 0.875rem;
+  --texto-base: 1rem;
+  --texto-md: 1.125rem;
+  --texto-lg: 1.5rem;
+  --texto-xl: 2rem;
+
+  /* Espaçamento */
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 0.75rem;
+  --espaco-4: 1rem;
+  --espaco-5: 1.5rem;
+  --espaco-6: 2rem;
+  --espaco-8: 3rem;
+
+  /* Layout */
+  --largura-sidebar: 220px;
+  --raio: 6px;
+  --raio-pequeno: 3px;
+  --sombra-card: 0 1px 2px rgba(27, 43, 34, 0.06);
+
+  /* Motion */
+  --transicao: 150ms ease;
+}

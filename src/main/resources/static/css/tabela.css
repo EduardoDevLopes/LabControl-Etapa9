@@ -1,0 +1,62 @@
+/*
+  LabControl — Tabelas de listagem
+  Compartilhado por dashboard, usuarios.html e equipamentos.html.
+*/
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela thead th {
+  text-align: left;
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+  text-transform: none;
+  padding: var(--espaco-3) var(--espaco-4);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.tabela tbody td {
+  padding: var(--espaco-3) var(--espaco-4);
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: var(--texto-sm);
+  vertical-align: middle;
+}
+
+.tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela tbody tr:hover {
+  background: var(--cor-fundo);
+}
+
+.tabela td.coluna-acoes {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tabela td.coluna-acoes .btn {
+  padding: 0.3rem 0.6rem;
+  font-size: var(--texto-xs);
+}
+
+.tabela-vazia {
+  padding: var(--espaco-6);
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-sm);
+}
+
+.celula-principal {
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.celula-secundaria {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-xs);
+  margin-top: 0.15rem;
+}

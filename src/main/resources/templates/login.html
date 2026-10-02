@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar — LabControl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/variables.css}">
+  <link rel="stylesheet" th:href="@{/css/base.css}">
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+
+  <main class="tela-login">
+    <div class="tela-login__marca">
+      <span class="tela-login__marca-icone">◈</span>
+      <span class="tela-login__marca-nome">LabControl</span>
+    </div>
+
+    <div class="cartao-login">
+      <h1 class="cartao-login__titulo">Entrar</h1>
+      <p class="cartao-login__subtitulo">Gestão de equipamentos de laboratório</p>
+
+      <form id="form-login" novalidate>
+        <div class="campo">
+          <label for="login">Login</label>
+          <input type="text" id="login" name="login" autocomplete="username" required>
+          <span class="mensagem-campo" id="erro-login"></span>
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" autocomplete="current-password" required>
+          <span class="mensagem-campo" id="erro-senha"></span>
+        </div>
+
+        <div class="alerta-login" id="alerta-login" hidden></div>
+
+        <button type="submit" class="btn btn-primario cartao-login__botao">Entrar</button>
+      </form>
+
+      <p class="cartao-login__dica">
+        Usuários de teste: <strong>ana.souza</strong>, <strong>carlos.lima</strong> ou <strong>fernanda.ribeiro</strong> — senha <strong>123456</strong>
+      </p>
+    </div>
+  </main>
+
+  <script th:src="@{/js/api.js}"></script>
+  <script th:src="@{/js/login.js}"></script>
+</body>
+</html>

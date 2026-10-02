@@ -1,0 +1,57 @@
+/*
+  LabControl — Formulários (usuario-form.html, equipamento-form.html)
+*/
+
+.cartao-formulario {
+  padding: var(--espaco-6);
+  max-width: 640px;
+}
+
+.campo {
+  margin-bottom: var(--espaco-4);
+}
+
+.campo--estreito {
+  max-width: 320px;
+}
+
+.linha-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-4);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.campo__ajuda {
+  display: block;
+  font-size: var(--texto-xs);
+  color: var(--cor-texto-suave);
+  margin-top: var(--espaco-1);
+}
+
+.formulario__acoes {
+  display: flex;
+  gap: var(--espaco-3);
+  margin-top: var(--espaco-5);
+  padding-top: var(--espaco-4);
+  border-top: 1px solid var(--cor-borda);
+}
+
+.previa-nivel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  margin-top: var(--espaco-2);
+  font-size: var(--texto-xs);
+  color: var(--cor-texto-suave);
+}
+
+@media (max-width: 560px) {
+  .linha-campos {
+    grid-template-columns: 1fr;
+  }
+}

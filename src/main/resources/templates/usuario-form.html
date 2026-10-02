@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usuário — LabControl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/variables.css}">
+  <link rel="stylesheet" th:href="@{/css/base.css}">
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet" th:href="@{/css/formulario.css}">
+</head>
+<body>
+
+  <div id="app" class="app">
+    <main class="pagina" id="conteudo-pagina">
+      <div class="pagina__cabecalho">
+        <div>
+          <h1 class="pagina__titulo" id="titulo-pagina">Novo usuário</h1>
+          <p class="pagina__subtitulo">Dados de acesso e perfil de permissão</p>
+        </div>
+      </div>
+
+      <section class="cartao cartao-formulario">
+        <form id="form-usuario" novalidate>
+          <input type="hidden" id="id" name="id">
+
+          <div class="campo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required>
+            <span class="mensagem-campo" id="erro-nome"></span>
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+            <span class="mensagem-campo" id="erro-email"></span>
+          </div>
+
+          <div class="linha-campos">
+            <div class="campo">
+              <label for="login">Login</label>
+              <input type="text" id="login" name="login" required>
+              <span class="mensagem-campo" id="erro-login"></span>
+            </div>
+
+            <div class="campo">
+              <label for="senha">Senha</label>
+              <input type="password" id="senha" name="senha" autocomplete="new-password">
+              <span class="mensagem-campo" id="erro-senha"></span>
+            </div>
+          </div>
+
+          <div class="campo campo--estreito">
+            <label for="perfil">Perfil</label>
+            <select id="perfil" name="perfil" required>
+              <option value="">Selecione…</option>
+              <option value="ADMINISTRADOR">Administrador</option>
+              <option value="TECNICO_LABORATORIO">Técnico de laboratório</option>
+              <option value="OPERADOR">Operador</option>
+            </select>
+            <span class="mensagem-campo" id="erro-perfil"></span>
+          </div>
+
+          <div class="formulario__acoes">
+            <button type="submit" class="btn btn-primario">Salvar</button>
+            <a class="btn btn-secundario" th:href="@{/usuarios}">Cancelar</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script th:src="@{/js/api.js}"></script>
+  <script th:src="@{/js/layout.js}"></script>
+  <script th:src="@{/js/usuario-form.js}"></script>
+</body>
+</html>

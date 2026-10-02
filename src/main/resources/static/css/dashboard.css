@@ -1,0 +1,51 @@
+/*
+  LabControl — Dashboard
+  Indicadores em três colunas + tabela de alerta de estoque.
+*/
+
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-4);
+  margin-bottom: var(--espaco-5);
+}
+
+.indicador {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-left: 3px solid var(--cor-primaria);
+  border-radius: var(--raio);
+  padding: var(--espaco-4) var(--espaco-5);
+  box-shadow: var(--sombra-card);
+}
+
+.indicador--alerta {
+  border-left-color: var(--cor-critico);
+}
+
+.indicador__rotulo {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-suave);
+}
+
+.indicador__valor {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-xl);
+  font-weight: 700;
+  margin-top: var(--espaco-1);
+}
+
+.secao-alerta__cabecalho {
+  padding: var(--espaco-4) var(--espaco-4) 0;
+}
+
+.secao-alerta__titulo {
+  font-size: var(--texto-md);
+  padding-bottom: var(--espaco-4);
+}
+
+@media (max-width: 720px) {
+  .indicadores {
+    grid-template-columns: 1fr;
+  }
+}

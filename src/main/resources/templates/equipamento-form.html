@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equipamento — LabControl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/variables.css}">
+  <link rel="stylesheet" th:href="@{/css/base.css}">
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet" th:href="@{/css/formulario.css}">
+</head>
+<body>
+
+  <div id="app" class="app">
+    <main class="pagina" id="conteudo-pagina">
+      <div class="pagina__cabecalho">
+        <div>
+          <h1 class="pagina__titulo" id="titulo-pagina">Novo equipamento</h1>
+          <p class="pagina__subtitulo">Dados do item e controle de estoque</p>
+        </div>
+      </div>
+
+      <section class="cartao cartao-formulario">
+        <form id="form-equipamento" novalidate>
+          <input type="hidden" id="id" name="id">
+
+          <div class="campo">
+            <label for="nome">Nome do equipamento</label>
+            <input type="text" id="nome" name="nome" required>
+            <span class="mensagem-campo" id="erro-nome"></span>
+          </div>
+
+          <div class="campo">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="3"></textarea>
+            <span class="mensagem-campo" id="erro-descricao"></span>
+          </div>
+
+          <div class="linha-campos">
+            <div class="campo">
+              <label for="quantidade">Quantidade em estoque</label>
+              <input type="number" id="quantidade" name="quantidade" min="0" step="1" required>
+              <span class="mensagem-campo" id="erro-quantidade"></span>
+              <span class="previa-nivel" id="previa-nivel" hidden>
+                Nível de estoque calculado: <span class="etiqueta" id="etiqueta-previa-nivel"></span>
+              </span>
+            </div>
+
+            <div class="campo">
+              <label for="status">Status</label>
+              <select id="status" name="status" required>
+                <option value="">Selecione…</option>
+                <option value="DISPONIVEL">Disponível</option>
+                <option value="EM_USO">Em uso</option>
+                <option value="MANUTENCAO">Em manutenção</option>
+              </select>
+              <span class="mensagem-campo" id="erro-status"></span>
+            </div>
+          </div>
+
+          <div class="formulario__acoes">
+            <button type="submit" class="btn btn-primario">Salvar</button>
+            <a class="btn btn-secundario" th:href="@{/equipamentos}">Cancelar</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script th:src="@{/js/api.js}"></script>
+  <script th:src="@{/js/layout.js}"></script>
+  <script th:src="@{/js/equipamento-form.js}"></script>
+</body>
+</html>

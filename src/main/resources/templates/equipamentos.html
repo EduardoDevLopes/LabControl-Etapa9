@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equipamentos — LabControl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/variables.css}">
+  <link rel="stylesheet" th:href="@{/css/base.css}">
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet" th:href="@{/css/tabela.css}">
+  <link rel="stylesheet" th:href="@{/css/listagem.css}">
+</head>
+<body>
+
+  <div id="app" class="app">
+    <main class="pagina" id="conteudo-pagina">
+      <div class="pagina__cabecalho">
+        <div>
+          <h1 class="pagina__titulo">Equipamentos</h1>
+          <p class="pagina__subtitulo">Inventário do laboratório</p>
+        </div>
+        <a class="btn btn-primario" th:href="@{/equipamentos/novo}">+ Novo equipamento</a>
+      </div>
+
+      <div class="barra-filtros">
+        <input type="search" id="campo-busca" placeholder="Buscar por nome" aria-label="Buscar por nome">
+      </div>
+
+      <section class="cartao">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Quantidade</th>
+              <th>Nível de estoque</th>
+              <th>Status</th>
+              <th class="coluna-acoes">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela-equipamentos">
+            <!-- Preenchido via JS -->
+          </tbody>
+        </table>
+        <p class="tabela-vazia" id="mensagem-sem-resultados" hidden>Nenhum equipamento encontrado para esta busca.</p>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-fundo" id="modal-exclusao" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-exclusao-titulo">
+      <h2 id="modal-exclusao-titulo">Excluir equipamento</h2>
+      <p id="modal-exclusao-texto">Tem certeza de que deseja excluir este equipamento? Esta ação não pode ser desfeita.</p>
+      <div class="modal__acoes">
+        <button type="button" class="btn btn-secundario" id="botao-cancelar-exclusao">Cancelar</button>
+        <button type="button" class="btn btn-perigo" id="botao-confirmar-exclusao">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <script th:src="@{/js/api.js}"></script>
+  <script th:src="@{/js/layout.js}"></script>
+  <script th:src="@{/js/equipamentos.js}"></script>
+</body>
+</html>
